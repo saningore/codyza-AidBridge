@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --color-paper: #f3efe4;
+  --color-ink: #1c2416;
+  --color-pine: #1e5c3a;
+  --color-deep: #143d27;
+  --color-card: #fffcf7;
+  --color-line: #e3dac8;
+  --color-moss: #e5f2e8;
+  --color-sand: #f3e4c2;
+  --color-clay: #8c3d1e;
+  --color-mist: #efeae0;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-paper); color: var(--color-ink); }
+::selection { background: #d5eadc; }
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 50;
+  border-radius: 999px;
+  background: var(--color-deep);
+  color: white;
+  padding: 0.6rem 1rem;
+}
+.skip-link:focus { top: 1rem; }
+
+.btn {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-pine);
+  padding: 0.55rem 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+.btn:hover { background: var(--color-deep); }
+.btn:disabled { opacity: 0.6; }
+.btn-secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-card);
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  border: 1px solid var(--color-line);
+}
+.field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.field input, .field select, .field textarea {
+  min-height: 2.75rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--color-line);
+  background: white;
+  padding: 0.55rem 0.8rem;
+  font-weight: 400;
+}
+.field textarea { min-height: 7rem; }
+.card {
+  border: 1px solid var(--color-line);
+  background: var(--color-card);
+  border-radius: 1.25rem;
+  padding: 1rem;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--color-moss);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.map-pin {
+  border: 2px solid #143d27;
+  background: #fffcf8;
+  color: #143d27;
+  border-radius: 999px;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.map-popup-title { font-weight: 700; margin: 0; }
+.map-popup-kind { margin: 0.2rem 0 0; color: #4d5748; font-size: 0.85rem; }

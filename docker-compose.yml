@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: aidbridge
+      POSTGRES_PASSWORD: aidbridge
+      POSTGRES_DB: aidbridge
+    ports:
+      - "54329:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aidbridge -d aidbridge"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - aidbridge-pg:/var/lib/postgresql/data
+
+volumes:
+  aidbridge-pg:
